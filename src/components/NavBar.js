@@ -7,67 +7,65 @@ import {
 } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-import Logo from '../generic-logo.png'
 
 
 function NavBar(){
+    let textMatch = {
+        textDecoration: 'none',
+        'color': '#181819',
+    }
+
     return(
         <div>
-            {/* <header>
-                <h1>Cuckboi Shopping Network</h1>
+            <Navbar bg="light" expand="lg">
                 <Container>
-                    <Container>
-
-                    </Container>
-                    <Nav variant="tabs" fill>
-                        <Nav.Item>
-                            <Nav.Link>
-                                <Link to='/'>Home</Link>
-                            </Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link>
-                                <Link to='/products'>Products</Link>
-                            </Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link>
-                                <Link to='/categories'>Categories</Link>
-                            </Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link>
-                                <Link to='/cart'>Cart</Link>
-                            </Nav.Link>
-                        </Nav.Item>
+                    <Navbar.Brand href="/">Generic Shopping Network</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link href="/" >Home</Nav.Link>
+                        <Nav.Link>
+                            <Link className="darken" to='/products' style={{
+                                textDecoration: 'none', 
+                                'color': '#707071'
+                                }} >Products</Link>
+                        </Nav.Link>
+                        <NavDropdown title="Categories" id="basic-nav-dropdown">
+                            <NavDropdown.Item>
+                                <Nav.Link>
+                                    <Link to='/category1' style={textMatch}>Category 1</Link>
+                                </Nav.Link>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item>
+                                <Nav.Link>
+                                    <Link to='/category2' style={textMatch}>Category 2</Link>
+                                </Nav.Link>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item>
+                                <Nav.Link>
+                                    <Link to='/category3' style={textMatch}>Category 3</Link>
+                                </Nav.Link>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item>
+                                <Nav.Link>
+                                    <Link to='/category4' style={textMatch}>Category 4</Link>
+                                </Nav.Link>
+                            </NavDropdown.Item>
+                        <NavDropdown.Divider />
+                            <NavDropdown.Item>
+                                <Nav.Link>
+                                    <Link to='/cart' style={textMatch}>Cart</Link>
+                                </Nav.Link>
+                            </NavDropdown.Item>
+                        <NavDropdown.Divider />
+                            <NavDropdown.Item>
+                                <Nav.Link>
+                                    <Link to='/user' style={textMatch}>My Account</Link>
+                                </Nav.Link>
+                            </NavDropdown.Item>
+                        </NavDropdown>
                     </Nav>
-                </Container>
-            </header> */}
-            <Navbar bg="light" expand='lg'>
-                <Container>
-                    <Navbar.Brand href="/">
-                        {/* <img src={Logo} alt="logo" style={{'width': '20%'}}></img> */}
-                        Generic Shopping Network
-                    </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav">
-                        <Navbar.Collapse id="basic-navbar-nav">
-                            <Nav className="me-auto">
-                                <Nav.Link>
-                                    <Link to='/'>Home</Link>
-                                </Nav.Link>
-                                <Nav.Link>
-                                    <Link to='/products'>Products</Link>
-                                </Nav.Link>
-                                <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                                    <NavDropdown.Divider />
-                                    <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                                </NavDropdown>
-                            </Nav>
-                        </Navbar.Collapse>
-                    </Navbar.Toggle>
+                    </Navbar.Collapse>
                 </Container>
             </Navbar>
         </div>
